@@ -1,12 +1,16 @@
 ---
 
 ### Reactor vs. Proactor
-### Sean Bollin (sean@sean-bollin.com)
+### Sean Bollin 
+
+<span style="color: gray">sean@sean-bollin.com</span>
 
 ---
 
 ### Intro
 
+  - Asynchronous patterns
+  - Utilized in Boost ASIO (C++), Twisted (Python), and others 
 ---
 
 ### Reactor
