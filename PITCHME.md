@@ -9,19 +9,20 @@
 
 ### Intro
 
-  - Asynchronous patterns
   - Boost ASIO (C++), Twisted (Python), etc.
   - Codified in Pattern-Oriented Software Architecture (Schmidt, Stal, Rohnert, Buschmann)
 
 ---
 
-### Full-code
+### Reactor
 
-  - https://github.com/seanbollin/reactor-proactor-example
+  - Handles requests delivered concurrently
+  - Demultiplexes and dispatches synchronously to handlers
+  - Single-threaded
 
 ---
 
-### Reactor
+### Reactor Handlers
 
 ```cpp
 Reactor reactor;
@@ -39,24 +40,22 @@ reactor.run();
 
 ---
 
-### Reactor
+### Reactor Event Loop
 ```cpp
-void run() {
-  while (true) {
-    int numberOfEvents = wait();
+while (true) {
+  int numberOfEvents = wait();
 
-    for (int i = 0; i < numberOfEvents; ++i) {
-      std::string input;
-      std::getline(std::cin, input);
+  for (int i = 0; i < numberOfEvents; ++i) {
+    std::string input;
+    std::getline(std::cin, input);
 
-      try {
-        handlers.at(input)();
-      } catch (const std::out_of_range& e) {
-        std::cout << "no handler for " << input << '\n';
-      }
+    try {
+      handlers.at(input)();
+    } catch (const std::out_of_range& e) {
+      std::cout << "no handler for " << input << '\n';
     }
-  } 
-}
+  }
+} 
 ```
 ---
 
@@ -76,17 +75,51 @@ class Epoll {
         MAX_EVENTS,
         BLOCK_INDEFINITELY);
     }
- 
-    ~Epoll() {
-      close(fileDescriptor);
-    }
 };
+```
+
+---
+
+### Reactor Limitation
+
+  - What if the handler blocks?
+
+```cpp
+reactor.addHandler("blocking", [](){
+  // ifstream setup ..
+  while (getline(myFile, line)) {
+    std::cout << line << '\n';
+  }
+});
 ```
 
 ---
 
 ### Proactor
 
+  - Fully asynchronous
+  - Can rely heavily on operating system functionality
+  - Linux aio, Windows IOCP
+
 ---
 
+### Proactor Async I/O
+
+```cpp
+
+aiocb.aio_fildes = fd;
+aiocb.aio_nbytes = BUFSIZE;
+aiocb.aio_offset = 0;
+ 
+int ret = aio_read(&aiocb);
+```
+
+### Proactor
+
+  - Initiator (can start async operations proactively)
+
+
 ### Resources
+  
+  - https://www.ibm.com/developerworks/library/l-async/index.html
+  - https://github.com/seanbollin/reactor-proactor-example
