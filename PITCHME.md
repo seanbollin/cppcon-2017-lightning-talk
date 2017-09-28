@@ -106,6 +106,8 @@ class Epoll {
 ### Proactor Async I/O
 
 ```cpp
+#include <aio.h>
+// -lrt 
 
 aiocb.aio_fildes = fd;
 aiocb.aio_nbytes = BUFSIZE;
