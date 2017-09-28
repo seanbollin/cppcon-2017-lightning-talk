@@ -85,12 +85,12 @@ class Epoll {
   - What if the handler blocks?
 
 ```cpp
-reactor.addHandler("blocking", [](){
-  // ifstream setup ..
-  while (getline(myFile, line)) {
-    std::cout << line << '\n';
-  }
-});
+    reactor.addHandler("blocking", [](){
+      // ifstream setup ..
+      while (getline(myFile, line)) {
+        std::cout << line << '\n';
+      }
+    });
 ```
 
 ---
@@ -114,10 +114,13 @@ aiocb.aio_offset = 0;
 int ret = aio_read(&aiocb);
 ```
 
+---
+
 ### Proactor
 
   - Initiator (can start async operations proactively)
 
+---
 
 ### Resources
   
