@@ -19,6 +19,8 @@
 
   - https://github.com/seanbollin/reactor-proactor-example
 
+---
+
 ### Reactor
 
 ```cpp
