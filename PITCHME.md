@@ -26,11 +26,11 @@
 ```cpp
 Reactor reactor;
 
-reactor.addHandler("one", `[](){
+reactor.addHandler("one", `[]`(){
   std::cout << "one handler called!" << '\n';
 });
 
-reactor.addHandler("two", `[](){
+reactor.addHandler("two", `[]`(){
   std::cout << "two handler called!" << '\n';
 });
 
