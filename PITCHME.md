@@ -84,7 +84,7 @@ class Epoll {
   - What if the handler blocks?
 
 ```cpp
-    reactor.addHandler("blocking", `[`](){
+    reactor.addHandler("blocking", `[]`(){
       // ifstream setup ..
       while (getline(myFile, line)) {
         std::cout << line << '\n';
