@@ -99,7 +99,7 @@ reactor.addHandler("blocking", `[]`(){
 
 <span style="color: gray">Fully asynchronous</span><br />
 <span style="color: gray">Can rely heavily on operating system functionality</span><br />
-<span style="color: gray">Linux AIO, Windows IOCP</span>
+<span style="color: gray">Linux AIO, Windows IOCP</span><br />
 <span style="color: gray">Initiator (can start async operations proactively)</span><br />
 
 ---
@@ -121,5 +121,5 @@ int ret = aio_read(&aiocb);
 
 ### Resources
   
-<span style="color: gray">https://www.ibm.com/developerworks/library/l-async/index.html</span>
-<span style="color: gray">https://github.com/seanbollin/reactor-proactor-example</span><br />
+<span style="color: gray">https://www.ibm.com/developerworks/library/l-async/index.html</span><br />
+<span style="color: gray">https://github.com/seanbollin/reactor-proactor-example</span>
