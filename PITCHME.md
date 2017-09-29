@@ -10,6 +10,7 @@
 ### Intro
 
 <span style="color: gray">Boost ASIO (C++), Twisted (Python), etc.</span><br />
+<span style="color: gray">Pattern-Oriented Software Architecture (Schmidt, Stal, Rohnert, Buschmann)</span>
 
 ---
 
@@ -18,14 +19,14 @@
 <span style="color: gray">Handles requests delivered concurrently</span><br />
 <span style="color: gray">Dispatches synchronously to handlers</span><br />
 <span style="color: gray">Single-threaded</span><br />
-<span style="color: gray">Pattern-Oriented Software Architecture (Schmidt, Stal, Rohnert, Buschmann)</span>
+
 ---
 
 ### Reactor Handlers
 ```cpp
 Reactor reactor;
 
-reactor.addHandler("one", \[\](){
+reactor.addHandler("one", [<!-- -->](){
   std::cout << "one handler called!" << '\n';
 });
 
