@@ -27,7 +27,7 @@
 ```cpp
 Reactor reactor;
 
-reactor.addHandler("one", `[]`(){
+reactor.addHandler("one", <span style="color: black">`</span>[]`(){
   std::cout << "one handler called!" << '\n';
 });
 
