@@ -27,13 +27,9 @@
 ```cpp
 Reactor reactor;
 
-reactor.addHandler("one", \[\]\(\){
-  std::cout << "one handler called!" << '\n';
-});
+reactor.addHandler("one", oneSuccessHandler);
 
-reactor.addHandler("two", `[]`(){
-  std::cout << "two handler called!" << '\n';
-});
+reactor.addHandler("two", twoSuccessHandler);
 
 reactor.run();
 ```
@@ -85,12 +81,7 @@ class Epoll {
 <span style="color: gray">What if the handler blocks?</span><br />
 
 ```cpp
-reactor.addHandler("blocking", `[]`(){
-  // ...
-  while (getline(myFile, line)) {
-    std::cout << line << '\n';
-  }
-});
+reactor.addHandler("blocking", longBlockingOperation);
 ```
 
 ---
