@@ -16,9 +16,9 @@
 ### Reactor
 
 <span style="color: gray">Handles requests delivered concurrently</span><br />
-<span style="color: gray">Demultiplexes and dispatches synchronously to handlers</span><br />
-<span style="color: gray">Single-threaded</span>
-
+<span style="color: gray">Dispatches synchronously to handlers</span><br />
+<span style="color: gray">Single-threaded</span><br />
+<span style="color: gray">Pattern-Oriented Software Architecture (Schmidt, Stal, Rohnert, Buschmann)</span>
 ---
 
 ### Reactor Handlers
@@ -97,7 +97,7 @@ reactor.addHandler("blocking", `[]`(){
 
 <span style="color: gray">Fully asynchronous</span><br />
 <span style="color: gray">Can rely heavily on operating system functionality</span><br />
-<span style="color: gray">Linux aio, Windows IOCP</span>
+<span style="color: gray">Linux AIO, Windows IOCP</span>
 
 ---
 
@@ -126,5 +126,5 @@ int ret = aio_read(&aiocb);
   
 <span style="color: gray">https://www.ibm.com/developerworks/library/l-async/index.html</span>
 <span style="color: gray">https://github.com/seanbollin/reactor-proactor-example</span><br />
-<span style="color: gray">Codified in Pattern-Oriented Software Architecture (Schmidt, Stal, Rohnert, Buschmann)</span>
+
 
