@@ -23,7 +23,7 @@
 ---
 
 ### Reactor Handlers
-
+<pre>
 ```cpp
 Reactor reactor;
 
@@ -34,7 +34,7 @@ reactor.addHandler("one", [](){
 reactor.addHandler("two", [](){
   std::cout << "two handler called!" << '\n';
 });
-
+</pre>
 reactor.run();
 ```
 
