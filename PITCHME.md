@@ -26,7 +26,7 @@
 ```cpp
 Reactor reactor;
 
-reactor.addHandler("one", &#91;&#93;(){
+reactor.addHandler("one", `[]`(){
   std::cout << "one handler called!" << '\n';
 });
 
