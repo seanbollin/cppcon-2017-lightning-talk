@@ -10,15 +10,14 @@
 ### Intro
 
 <span style="color: gray">Boost ASIO (C++), Twisted (Python), etc.</span><br />
-<span style="color: gray">Codified in Pattern-Oriented Software Architecture (Schmidt, Stal, Rohnert, Buschmann)</span>
 
 ---
 
 ### Reactor
 
-  - Handles requests delivered concurrently
-  - Demultiplexes and dispatches synchronously to handlers
-  - Single-threaded
+<span style="color: gray">Handles requests delivered concurrently</span><br />
+<span style="color: gray">Demultiplexes and dispatches synchronously to handlers</span><br />
+<span style="color: gray">Single-threaded</span>
 
 ---
 
@@ -81,7 +80,7 @@ class Epoll {
 
 ### Reactor Limitation
 
-  - What if the handler blocks?
+<span style="color: gray">What if the handler blocks?</span><br />
 
 ```cpp
 reactor.addHandler("blocking", `[]`(){
@@ -96,9 +95,9 @@ reactor.addHandler("blocking", `[]`(){
 
 ### Proactor
 
-  - Fully asynchronous
-  - Can rely heavily on operating system functionality
-  - Linux aio, Windows IOCP
+<span style="color: gray">Fully asynchronous</span><br />
+<span style="color: gray">Can rely heavily on operating system functionality</span><br />
+<span style="color: gray">Linux aio, Windows IOCP</span>
 
 ---
 
@@ -119,11 +118,13 @@ int ret = aio_read(&aiocb);
 
 ### Proactor
 
-  - Initiator (can start async operations proactively)
+<span style="color: gray">Initiator (can start async operations proactively)</span>
 
 ---
 
 ### Resources
   
-  - https://www.ibm.com/developerworks/library/l-async/index.html
-  - https://github.com/seanbollin/reactor-proactor-example
+<span style="color: gray">https://www.ibm.com/developerworks/library/l-async/index.html</span>
+<span style="color: gray">https://github.com/seanbollin/reactor-proactor-example</span><br />
+<span style="color: gray">Codified in Pattern-Oriented Software Architecture (Schmidt, Stal, Rohnert, Buschmann)</span>
+
