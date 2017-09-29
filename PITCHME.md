@@ -86,7 +86,7 @@ class Epoll {
 
 ```cpp
 reactor.addHandler("blocking", `[]`(){
-  // ifstream setup ..
+  // ...
   while (getline(myFile, line)) {
     std::cout << line << '\n';
   }
