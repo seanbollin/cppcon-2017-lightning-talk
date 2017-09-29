@@ -9,8 +9,8 @@
 
 ### Intro
 
-  - Boost ASIO (C++), Twisted (Python), etc.
-  - Codified in Pattern-Oriented Software Architecture (Schmidt, Stal, Rohnert, Buschmann)
+<span style="color: gray">Boost ASIO (C++), Twisted (Python), etc.</span>
+<span style="color: gray">Codified in Pattern-Oriented Software Architecture (Schmidt, Stal, Rohnert, Buschmann)</span>
 
 ---
 
